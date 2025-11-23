@@ -2,3 +2,7 @@ langchain
 langchain-community 
 wikipedia
 streamlit
+langchain[google-genai]
+python-dotenv
+faiss-cpu
+langchain_text_splitters 
