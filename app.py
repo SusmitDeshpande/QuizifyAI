@@ -1,5 +1,6 @@
 import streamlit as st
 from langchain_community.retrievers import WikipediaRetriever 
+from langchain_core.documents import Document
 
 retriever = WikipediaRetriever(load_max_docs=5)
 
@@ -13,9 +14,8 @@ choice = st.radio(
 
 if choice=='yes':
     user_info = st.text_input("Please enter your information here : ")
-
-
+    user_doc = Document(page_content=user_info, metadata={"source":"user provided info"})
 
 if st.button("Submit"):
-    docs = retriever.invoke(topic)
-    st.write(docs[0].page_content[:400])
+    wiki_doc = retriever.invoke(topic)
+    st.write(user_doc.page_content[:400])
