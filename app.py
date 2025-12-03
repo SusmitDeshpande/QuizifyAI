@@ -1,12 +1,14 @@
 import streamlit as st
 
+st.session_state.force_home = True
+
 from load_api import load_api
 load_api()
 
 from docs import get_wiki_docs, get_user_doc
 from vectordb import generate_db
 
-st.set_page_config(page_title="My Multi-Page App", layout="wide")
+st.set_page_config(page_title="Quizify AI", layout="wide")
 
 st.title("Welcome to Quizify AI")
 
@@ -38,6 +40,7 @@ wiki_flag = st.radio(
 user_info = st.text_input("Please enter your information here : ", disabled = user_flag=='no')
 
 st.session_state.all_docs = []
+st.session_state.retriever = None
 
 if st.button("Prep", disabled=not (wiki_flag=='yes' or user_flag=='yes')):
     
