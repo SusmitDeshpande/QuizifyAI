@@ -1,4 +1,4 @@
-from utils import text_splitter, embeddings
+from src.utils import text_splitter, embeddings
 from langchain_community.vectorstores import FAISS
 
 def generate_db(all_docs):

@@ -1,5 +1,5 @@
 import streamlit as st 
-from chains import gen_rag_chain
+from src.chains import gen_rag_chain
 
 if not st.session_state.get("force_home", False):
     st.switch_page("app.py")

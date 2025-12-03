@@ -2,11 +2,11 @@ import streamlit as st
 
 st.session_state.force_home = True
 
-from load_api import load_api
+from src.load_api import load_api
 load_api()
 
-from docs import get_wiki_docs, get_user_doc
-from vectordb import generate_db
+from src.docs import get_wiki_docs, get_user_doc
+from src.vectordb import generate_db
 
 st.set_page_config(page_title="Quizify AI", layout="wide")
 

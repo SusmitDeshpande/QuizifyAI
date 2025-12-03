@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
-from templates import quiz_msg_template, qa_template
+from src.templates import quiz_msg_template, qa_template
 from langchain_core.runnables import RunnablePassthrough
-from models import llm, model
+from src.models import llm, model
 from langchain_core.output_parsers import StrOutputParser
 from langchain_classic.chains.summarize import load_summarize_chain
 
